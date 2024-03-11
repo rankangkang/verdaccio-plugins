@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  service-npm:
+    image: service-npm:1.0.0
+    container_name: service-npm
+    ports:
+      - 4873:4873
+    environment:
+      VERDACCIO_PROTOCOL: http
+      VERDACCIO_PORT: 4873
+    volumes:
+      - ./conf:/verdaccio/conf
+      - ./storage:/verdaccio/storage
+    restart: always    
+    # networks:
+    #  - net-wroknpm

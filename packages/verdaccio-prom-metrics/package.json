@@ -1,0 +1,31 @@
+{
+  "name": "verdaccio-prom-metrics",
+  "version": "1.0.0",
+  "description": "Verdaccio middleware plugin used to collect prometheus compatible metrics",
+  "keywords": [
+    "verdaccio",
+    "plugin",
+    "middleware",
+    "metrics",
+    "prometheus"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "link": "npm link",
+    "test": "jest --coverage --passWithNoTests",
+    "build": "rm -rf ./lib && npx tsc",
+    "lint": "eslint '**/*.{js,ts}'",
+    "prettier": "prettier --write '**/*.{js,ts,json,md}'",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "prom-client": "14.0.1"
+  }
+}

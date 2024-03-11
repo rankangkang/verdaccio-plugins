@@ -1,0 +1,14 @@
+// const defaultConfig = require('../../jest.config');
+// module.exports = {
+//   ...defaultConfig,
+// };
+module.exports = {
+  verbose: true,
+  collectCoverage: true,
+  collectCoverageFrom: ['src/**/*.ts', '!src/index.ts', '!src/types/*'],
+  moduleFileExtensions: ['js', 'ts'],
+  transform: {
+    '^.+\\.ts$': 'ts-jest',
+  },
+  // reporters: ['default', ['jest-junit', { outputDirectory: './coverage/jest', outputName: 'results.xml' }]],
+};

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "allowJs": true,
+    "sourceMap": true,
+    "checkJs": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["src/components/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/pages/*": ["src/pages/*"],
+      "@/i18n/*": ["src/i18n/*"],
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src", "types/*.d.ts", "src/i18n/**/*.json", "jest/unit/components"],
+}

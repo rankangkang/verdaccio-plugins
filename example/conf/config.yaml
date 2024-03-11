@@ -1,0 +1,63 @@
+plugins: /verdaccio/plugins
+storage: /verdaccio/storage/data
+
+web:
+  enable: true
+  title: npm.kk.cn
+  primary_color: "#6085fc"
+  showInfo: true
+  showSettings: true
+  showDownloadTarball: false
+  showFooter: false
+  htmlCache: false
+
+theme:
+  webui:
+
+# i18n:
+#   web: zh-CN
+
+auth:
+  htpasswd:
+    file: /verdaccio/storage/htpasswd
+
+store:
+  local-s3:
+    local_backend:
+    remote_backend:
+      bucket: your_bucket
+      endpoint: s3_endpoint
+      accessKeyId: your_ak
+      secretAccessKey: your_sk
+    private_packages:
+      - "@test/*"
+      - "@kk/*"
+
+middlewares:
+  audit:
+    enabled: true
+
+uplinks:
+  taobao:
+    url: https://registry.npmmirror.com/
+    cache: true
+
+packages:
+  "@test/*":
+    access: $authenticated
+    publish: $authenticated
+    unpublish: $authenticated
+  "@kk/*":
+    access: $authenticated
+    publish: $authenticated
+    unpublish: $authenticated
+  "**":
+    access: $all
+    # publish: $anonymous
+    # unpublish: $all
+    proxy: taobao
+
+max_body_size: 100mb
+
+logs:
+  - { type: stdout, format: pretty, level: info }

@@ -1,0 +1,11 @@
+**/dist
+**/lib
+**/node_modules
+**/coverage
+**/*-lock.*
+**/static
+conf
+.git
+.eslint*
+example
+debug

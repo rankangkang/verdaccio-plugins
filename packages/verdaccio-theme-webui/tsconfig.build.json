@@ -1,0 +1,26 @@
+{
+  // "extends": "../../tsconfig.base",
+  "compilerOptions": {
+    "outDir": "./build",
+    "skipLibCheck": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "allowJs": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "checkJs": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["src/components/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/pages/*": ["src/pages/*"],
+      "@/i18n/*": ["src/i18n/*"],
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "types/*.d.ts", "i18n/**/*.json"],
+  "exclude": ["src/**/*.test.ts"]
+}

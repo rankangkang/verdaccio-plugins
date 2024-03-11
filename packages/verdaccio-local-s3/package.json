@@ -1,0 +1,25 @@
+{
+  "name": "verdaccio-local-s3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "link": "npm link",
+    "test": "jest --coverage --passWithNoTests",
+    "build": "rm -rf ./lib ./types && npx tsc"
+  },
+  "dependencies": {
+    "@verdaccio/commons-api": "^10.2.0",
+    "@verdaccio/local-storage": "^10.3.3",
+    "@verdaccio/streams": "^10.2.1",
+    "lodash": "^4.17.21",
+    "micromatch": "^4.0.5",
+    "verdaccio-aws-s3-storage": "^10.3.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
